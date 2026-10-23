@@ -38,7 +38,7 @@ body {
   pointer-events: none;
   background:
     linear-gradient(180deg, rgba(7, 17, 31, 0.40), rgba(7, 17, 31, 0.70)),
-    url('img/tr.jpg') center center / cover no-repeat;
+    url('tr.jpg') center center / cover no-repeat;
 }
 
 /* Hafif renkli ışık efekti (resmin üstünde) */
