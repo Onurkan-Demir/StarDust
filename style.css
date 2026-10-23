@@ -30,11 +30,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Sabit sayfa arka plan resmi (resimler/tr.jpg) */
+/* Sabit sayfa arka plan resmi (img/tr.jpg) */
 .site-background {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
   background:
     linear-gradient(180deg, rgba(7, 17, 31, 0.40), rgba(7, 17, 31, 0.70)),
@@ -392,6 +392,7 @@ header {
   font: 700 3.8rem "Barlow Condensed", sans-serif;
   pointer-events: none;
 }
+
 /* About Section Grid */
 .about-grid {
   display: grid;
@@ -411,14 +412,16 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 .about-text {
   background: rgba(7, 17, 31, 0.88);
   backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 18px;
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--line);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
+
 /* Şeffaf Roket Görseli Ayarı */
 .about-img {
   position: absolute;
@@ -502,7 +505,7 @@ header {
 /* Etiket Tasarımı (Tag) */
 .tag {
   display: inline-block;
-  color: var(--cyan, #58e0e6);
+  color: var(--cyan);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -525,7 +528,7 @@ header {
   display: inline-flex;
   gap: 8px;
   align-items: center;
-  color: var(--cyan, #58e0e6); /* Mavi yerine cyan vurgusuyla daha uyumlu durur */
+  color: var(--cyan);
   font-size: 0.85rem;
   font-weight: 700;
   margin-top: 18px;
@@ -548,22 +551,6 @@ header {
 .team-card {
   padding: 0;
   overflow: hidden;
-}
-
-/* Tablet ve Mobil Responsive Uyum */
-@media (max-width: 1024px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  .team-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .team-layout {
-    grid-template-columns: 1fr;
-  }
 }
 
 .avatar {
@@ -594,31 +581,6 @@ header {
   margin-top: 20px;
   color: var(--muted);
   font-size: 0.83rem;
-}
-
-/* Tablet ve Mobil Uyumlu Responsive Kodlar */
-@media (max-width: 1024px) {
-  .team-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .team-layout {
-    grid-template-columns: 1fr;
-  }
-}
-/* Küçük ekranlar (Mobil / Tablet) için responsive ayar */
-@media (max-width: 1024px) {
-  .team-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .team-layout {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Process Flow */
@@ -827,13 +789,17 @@ footer {
   transform: translate(-50%, 0);
 }
 
-/* Responsive Breakpoints */
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .team-layout { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .nav-links { gap: 13px; }
   .nav-links a { font-size: 0.76rem; }
   .nav-cta { display: none; }
   .about-grid { gap: 35px; }
-  .team-layout { grid-template-columns: repeat(2, 1fr); }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { gap: 25px; }
 }
